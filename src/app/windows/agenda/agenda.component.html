@@ -1,0 +1,20 @@
+
+  <nav class="nav-header navbar navbar-expand-lg navbar-dark bg-primary">
+    
+      <li class="nav-item" *ngIf="isLogged" routerLink="/perfil">
+        <img class="image-header" src="{{user.photoURL}}" alt="Foto de perfil">
+      </li>
+   
+    <button class="btn btn-header" type="button" routerLink="/login" *ngIf="!isLogged">
+     Iniciar sesión
+    </button>
+    <button class="btn btn-header" type="button" routerLink="/" (click)="onLogout()" *ngIf="isLogged">
+      Salir
+     </button>
+   
+  </nav>
+
+<div class="googleCalendar">
+    <iframe src="https://calendar.google.com/calendar/embed?height=340&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLima&amp;src=ZHlhbmFyYUBwZXBwZXJtaW50LnBl&amp;color=%23039BE5&amp;title=gd&amp;showTitle=0&amp;showNav=1&amp;showDate=1&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA" style="border-width:0" width="250" height="500" frameborder="0" scrolling="no"></iframe>    
+</div>
+

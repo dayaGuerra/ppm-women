@@ -1,0 +1,29 @@
+.image-header{
+    border-radius: 100%;
+    max-width: 50px;
+    max-height: 50px;
+}
+li{
+    list-style: none;
+}
+
+.nav-header {
+  position: fixed; /*Fixed ya que queremos que la posición sea en relación al navegador*/
+  top: 0; /*El valor 0 indica que va a quedar arriba de todo*/
+  left: 0; /*Para que el menu se ubique siempre en la parte izquierda de la pantalla*/
+  width: 100%; /*100% para que ocupe todo el ancho del navegador*/
+  }
+
+
+
+.btn-header{
+    border-radius: 5px;
+    border: 2px solid #fff;
+    color:#fff;
+}
+
+.btn-header:hover {
+    background-color: #fff;
+    color: #eb6864
+}
+

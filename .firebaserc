@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "peppermint-women-bd": {
+      "hosting": {
+        "PPM-Women": [
+          "peppermint-women-bd"
+        ]
+      }
+    }
+  }
+}
