@@ -11,14 +11,16 @@ import { User } from 'firebase'
   providedIn: 'root'
 })
 export class AuthService {
+
+
   public user: User;
   public userData$: Observable<firebase.User>;
 
-  constructor(public afAuth: AngularFireAuth, public afFirestore: AngularFirestore) { 
+  constructor(public afAuth: AngularFireAuth, public afFirestore: AngularFirestore) {
     this.userData$ = afAuth.authState;
   }
 
-async loginGoogle(){
+  async loginGoogle(){
   try{
     return this.afAuth.signInWithPopup(new auth.GoogleAuthProvider());
   }
@@ -35,7 +37,7 @@ async loginGoogle(){
       console.log(error)
     }
     //redirigir al usuario
-    //Si tenemos en el local storage información del usuario la deberiamos de eliminar aquí 
+    //Si tenemos en el local storage información del usuario la deberiamos de eliminar aquí
   }
   getCurrentUser(){
     return this.afAuth.authState.pipe(first()).toPromise();

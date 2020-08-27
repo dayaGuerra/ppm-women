@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../core/services/auth.service';
 
 @Component({
-  selector: 'app-agenda',
-  templateUrl: './agenda.component.html',
-  styleUrls: ['./agenda.component.css'],
-  providers: [AuthService]
+  selector: 'app-navbar-header',
+  templateUrl: './navbar-header.component.html',
+  styleUrls: ['./navbar-header.component.css']
 })
-export class AgendaComponent implements OnInit {
+export class NavbarHeaderComponent implements OnInit {
+
   public isLogged = false;
   public user:any;
 
@@ -21,7 +21,8 @@ export class AgendaComponent implements OnInit {
     }
   }
 
-  onLogout(){
-    this.authSvc.logout();  }
+  onLogout() {
+    this.authSvc.logout();
+  }
 
 }

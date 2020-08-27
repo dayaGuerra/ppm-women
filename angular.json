@@ -130,5 +130,8 @@
       }
     }
   },
-  "defaultProject": "PPM-Women"
+  "defaultProject": "PPM-Women",
+  "cli": {
+    "analytics": "c750ade7-5e29-46d9-8bce-c838710164a8"
+  }
 }

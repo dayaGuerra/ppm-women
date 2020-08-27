@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../core/services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
   constructor(private authSvc: AuthService, private router: Router) { }
- 
+
   async onGoogleLogin(){
     // to the services
-    
+
     try{
       const user = await this.authSvc.loginGoogle();
       if (user){
@@ -25,7 +25,7 @@ export class LoginComponent {
       console.log(error)
     }
   }
- 
- 
+
+
 
 }
