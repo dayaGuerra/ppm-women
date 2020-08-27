@@ -18,7 +18,7 @@ export class LoginComponent {
       const user = await this.authSvc.loginGoogle();
       if (user){
         // redirect to agenda
-        this.router.navigate(['/agenda']);
+        this.router.navigate(['/windows/agenda']);
       }
       }
     catch(error){
