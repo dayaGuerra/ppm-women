@@ -14,9 +14,9 @@ export class NavbarHeaderComponent implements OnInit {
   constructor(private authSvc: AuthService) { }
 
  async ngOnInit() {
-    console.log('Navbar');
     this.user = await this.authSvc.getCurrentUser();
-    if(this.user){
+    console.log(this.user);
+    if (this.user) {
       this.isLogged = true;
     }
   }

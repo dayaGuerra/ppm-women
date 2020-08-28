@@ -28,9 +28,11 @@ li{
 margin-top:10px;
 }
 .nav-header {
-position: fixed; /*Fixed ya que queremos que la posición sea en relación al navegador*/
-top: 0; /*El valor 0 indica que va a quedar arriba de todo*/
-left: 0; /*Para que el menu se ubique siempre en la parte izquierda de la pantalla*/
-width: 100%; /*100% para que ocupe todo el ancho del navegador*/
-text-align: center;
+  position: fixed; /*Fixed ya que queremos que la posición sea en relación al navegador*/
+  top: 0; /*El valor 0 indica que va a quedar arriba de todo*/
+  left: 0; /*Para que el menu se ubique siempre en la parte izquierda de la pantalla*/
+  width: 100%; /*100% para que ocupe todo el ancho del navegador*/
+  text-align: center;
+  z-index: 1000;
 }
+

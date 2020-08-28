@@ -7,22 +7,41 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
-  constructor(private authSvc: AuthService, private router: Router) { }
+  dataUsers: any[] = [];
 
-  async onGoogleLogin(){
-    // to the services
+  constructor(private authSvc: AuthService,
+              private router: Router) { }
 
-    try{
+
+  ngOnInit(): void {
+  }
+
+  subsDataUser() {
+    this.authSvc.getDataUser().subscribe(e => e.forEach(doc => {
+      if (doc.data()) {
+        this.dataUsers.push(doc.data());
+      }
+    }));
+  }
+
+
+  async onGoogleLogin() {
+    try {
+      this.subsDataUser();
       const user = await this.authSvc.loginGoogle();
-      if (user){
-        // redirect to agenda
+      let indexU = -1;
+      indexU = this.dataUsers.find(e => e.email === user.user.email);
+      if (user && indexU === undefined) {
+        let idUs = this.dataUsers.length;
+        this.authSvc.saveUserData(user.user, idUs);
+        this.router.navigate(['/windows/agenda']);
+      } else {
         this.router.navigate(['/windows/agenda']);
       }
-      }
-    catch(error){
-      console.log(error)
+    } catch (error) {
+      console.log('erorsito', error);
     }
   }
 

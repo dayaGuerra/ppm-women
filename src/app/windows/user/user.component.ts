@@ -18,16 +18,10 @@ export class UserComponent implements OnInit {
 
   constructor( private authSvc: AuthService) { }
 
-  public profileForm = new FormGroup({
-    displayName: new FormControl('', Validators.required),
-    email: new FormControl({value:'', disabled:true}, Validators.required),
-  })
-
-ngOnInit(){
+  ngOnInit(){
   //this.iniValuesForm(user)
   this.authSvc.userData$.subscribe(user =>{
-    this.initValuesForm(user);
-
+    // this.initValuesForm(user);
   });
 }
 
@@ -35,12 +29,12 @@ onSaveUser(): void{
 console.log('saveuser')
 }
 
-private initValuesForm(user: UserI):void{
-  this.profileForm.patchValue({
-    displayName: user.displayName,
-    email: user.email,
-  })
-}
+// private initValuesForm(user: UserI):void{
+//   this.profileForm.patchValue({
+//     displayName: user.displayName,
+//     email: user.email,
+//   })
+// }
 
 }
 
