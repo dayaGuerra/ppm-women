@@ -1,23 +1,23 @@
 <div class="container margin-top ">
     <div  *ngFor="let item of dataUsers" >
       <div class="row ">
-      <div class="col-h ">
+      <div class="col-2 ">
         <img src="{{item.urlPerfil}}"
         class="imagen-card" alt="foto-de-perfil">
       </div>
 
-      <div class="col-h">
+      <div class="col">
         <h5 class="titulo">{{item.nombreCompleto}}</h5>
         <p class="subtitulo"><small class="text-muted">{{item.emprendimientoSubtitulo}}</small>
         sin data</p>
       </div>
 
       <div class="row ">
-        <div class="col-h">
+        <div class="col">
           <img class="tamaño" src="../../../assets/eye.png" alt="button-image" (click)="routePerfil()" />
          
         </div>
-        <div class="col-h">
+        <div class="col">
         
            <img class="tamaño margin" src="../../../assets/whatsapp.png" alt="button-whatsapp" />
          
