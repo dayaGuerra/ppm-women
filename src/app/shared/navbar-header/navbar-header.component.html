@@ -2,17 +2,17 @@
   <div class="container margin-top">
     <div class="row">
       <div class="col">
-        <li class="" *ngIf="isLogged" routerLink="/perfil">
+        <li class="" *ngIf="isLogged" (click)="routerPerfil">
           <img class="image-header" src="{{user.photoURL}}" alt="Foto de perfil">
         </li>
       </div>
       <div class="col div-ppm">
-        <li class="" *ngIf="isLogged" routerLink="/perfil">
-          <h3 class="tittle"> Mi agenda </h3>
+        <li class="" *ngIf="isLogged">
+          <h3 class="tittle"> ruta </h3>
         </li>
       </div>
       <div class="col div-ppm">
-        <li class="" *ngIf="isLogged" routerLink="/perfil">
+        <li class="" *ngIf="isLogged" (click)="routerHome">
           <img class="btn-header" src="../../../assets/logo-ppm.svg" alt="Foto de perfil">
         </li>
       </div>
