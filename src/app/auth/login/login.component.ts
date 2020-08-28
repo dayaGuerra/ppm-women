@@ -36,9 +36,9 @@ export class LoginComponent implements OnInit {
       if (user && indexU === undefined) {
         let idUs = this.dataUsers.length;
         this.authSvc.saveUserData(user.user, idUs);
-        this.router.navigate(['/windows/agenda']);
+        this.router.navigate(['/form']);
       } else {
-        this.router.navigate(['/windows/agenda']);
+        this.router.navigate(['/form']);
       }
     } catch (error) {
       console.log('erorsito', error);

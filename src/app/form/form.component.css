@@ -1,0 +1,38 @@
+.formulario{
+    margin-top:15px;
+    margin-bottom: 85px;
+}
+
+.form {
+    position: relative;
+    width: 100%;
+    padding-bottom:100%;
+  }
+  
+  .form iframe{
+    position: absolute;
+    margin-left:2px;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+  }
+
+  .titulo{
+    color:#009193;
+    font-weight: 800;
+    font-size: 20px;
+  }
+  
+  .subtitulo{
+    color: #a00046;
+  }
+  
+  .content{
+      text-align: center;
+      margin-top: 150px
+  }
+
+  #color-btn{
+   background-color: #a00046;
+  }

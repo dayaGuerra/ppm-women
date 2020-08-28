@@ -10,10 +10,17 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 // Importar enviroment para la vinculación con los permisos de Firebase
 import { environment } from 'src/environments/environment';
 import { SharedModule } from './shared/shared.module';
+import { FormComponent } from './form/form.component';
+import { AcuerdoComponent } from './acuerdo/acuerdo.component';
+import { AcuerdoTwoComponent } from './acuerdo-two/acuerdo-two.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    FormComponent,
+    AcuerdoComponent,
+    AcuerdoTwoComponent,
+    
   ],
   imports: [
     BrowserModule,
