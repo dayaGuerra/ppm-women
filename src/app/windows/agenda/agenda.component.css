@@ -1,14 +1,14 @@
 .googleCalendar{
     position: relative;
 
-    width: 90%;
+    width: 100%;
     padding-bottom:100%;
   }
   
   .googleCalendar iframe{
     position: absolute;
-    margin-top: 85px;
-    margin-left: 20px;
+    margin-top: 30px;
+    margin-left:2px;
     top: 0;
     left: 0;
     width: 100%;

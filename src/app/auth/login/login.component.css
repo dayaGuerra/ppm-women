@@ -1,0 +1,30 @@
+
+
+  
+  .bg-img {
+    /* The image used */
+    background-image: url("../../../assets/inicio.svg");
+    min-height: 43rem;
+    /* Center and scale the image*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .top{
+      margin-top: 370px
+  }
+
+  .card-login{
+    position: absolute;
+    right: 0;
+    margin: 30px;
+    max-width: 400px;
+    padding: 16px;
+}
+
+#color-btn{
+    background-color: #a00046;
+    color: #ffffff;
+}
