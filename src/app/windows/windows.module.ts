@@ -10,6 +10,9 @@ import { UserComponent } from './user/user.component';
 import { SharedModule } from '../shared/shared.module';
 import { ComunidadComponent } from './comunidad/comunidad.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { WomenComponent } from './taller/women/women.component';
+import { PodcastComponent } from './taller/podcast/podcast.component';
+import { VariosComponent } from './taller/varios/varios.component';
 
 
 @NgModule({
@@ -19,7 +22,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ClasesComponent,
     DocumentosComponent,
     UserComponent,
-    ComunidadComponent
+    ComunidadComponent,
+    WomenComponent,
+    PodcastComponent,
+    VariosComponent
   ],
   imports: [
     CommonModule,
