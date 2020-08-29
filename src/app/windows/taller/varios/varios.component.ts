@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-varios',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VariosComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  routerSesiones(){
+    this.router.navigate(['windows/clases'])
   }
 
 }

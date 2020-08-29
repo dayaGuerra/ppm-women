@@ -1,12 +1,20 @@
 <div class="d-flex justify-content-center menu-footer">
+    <div class="contenido" (click)="routeAgenda()">
+        <a>  <i class="far fa-calendar fa-2x"></i><p>  Mi agenda</p> </a>
+    </div>
+    <div class="contenido" (click)="routeClases()">
+       <a> <i class="fas fa-tv fa-2x"></i><p>  Mis sesiones</p> </a>
+    </div>
+    <div class="contenido" (click)="routeComunidad()">
+    
+        <a> <i class="fa fa-users fa-2x" aria-hidden="true"></i>  <p>  Mi comunidad</p> </a>
+    </div>
+    <div class="contenido" (click)="routeDocumentos()">
 
-    <a (click)="routeAgenda()">Agenda</a>
-    <a (click)="routeClases()">Sesiones</a>
-    <a (click)="routeComunidad()">Comunidad</a>
-    <a (click)="routeDocumentos()">Documentos</a>
-
-
+        <a><i class="far fa-file-alt fa-2x"></i> <p>  Mis documentos</p></a>
+    </div>
 </div>
+
 
 
 
