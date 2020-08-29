@@ -12,7 +12,7 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  routeAcuerdo() {
+  routerAcuerdo() {
     this.route.navigate(['/acuerdo']);
   }
 

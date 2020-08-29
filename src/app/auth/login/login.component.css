@@ -3,7 +3,7 @@
   
   .bg-img {
     /* The image used */
-    margin-top: 50px;
+    margin-top:80px;
     background-image: url("../../../assets/inicio.svg");
     min-height: 28rem;
     /* Center and scale the image*/
@@ -11,21 +11,25 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    text-align: center;
   }
   
   .top{
-      margin-top: 180px
+      margin-top: 180px;
+      text-align: center;
   }
 
   .card-login{
-    position: absolute;
-    right: 30px;
-    margin: 30px;
-    max-width: 400px;
-    padding: 16px;
+    position: absolute ;
+    margin-left: 60px;
+    margin-top:40px
+   
+    
+  
 }
 
 #color-btn{
+  
   background-color: #ffffff;
   color: #a00046;
   align-content: center;
@@ -59,4 +63,10 @@
   margin-left: 18px;
   width: 90%;
   height: 80px;
+}
+
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
 }
