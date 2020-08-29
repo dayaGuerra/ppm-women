@@ -6,9 +6,9 @@
           <img class="image-header" src="{{user.photoURL}}" alt="Foto de perfil">
         </li>
       </div>
-      <div class="col div-ppm">
+      <div class="col-4 div-ppm">
         <li class="" *ngIf="isLogged">
-          <h3 class="tittle">  </h3>
+          <h3 class="tittle"> {{name}} </h3>
         </li>
       </div>
       <div class="col div-ppm">
@@ -18,9 +18,9 @@
       </div>
 
   </div>
-</div>
-
-  <!-- <div>
+</div> 
+<!--
+  <div>
     <h4 class="card-title">{{dataRoute.title}}</h4>
   </div>
 
@@ -33,8 +33,8 @@
 
  <button class="btn btn-header" type="button" (click)="editPeffil()" *ngIf="dataRoute.path === 'perfil'">
   Editar
- </button>
- -->
+ </button>-->
+ 
 <!-- </nav> -->
 <!--
 <button class="btn btn-header" type="button" routerLink="/" (click)="onLogout()" *ngIf="isLogged">

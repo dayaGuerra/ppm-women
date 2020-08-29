@@ -5,6 +5,8 @@ import { LocalService } from 'src/app/core/services/local.service';
 import { DataUserPerfil } from '../../models/user-perfil';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from '../../core/services/auth.service';
+import { Router } from '@angular/router';
+import { DataRoute } from '../../models/route.interface';
 
 
 @Component({
@@ -13,20 +15,45 @@ import { AuthService } from '../../core/services/auth.service';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
-
+  public isLogged = false;
+  public user:any;
   dataUser = new DataUserPerfil();
   editPerfil: boolean = false;
 
   formDataUser: FormGroup;
 
+  dataRoute: DataRoute = {
+    path: '',
+    title: ''
+  };
   constructor( public localService: LocalService,
                private autService: AuthService,
-               private buildForm: FormBuilder) { }
+               private buildForm: FormBuilder,
+               public route:Router,
+               private authSvc:AuthService) { }
 
-  ngOnInit(): void {
+ async ngOnInit(){
+
+    this.user = await this.authSvc.getCurrentUser();
+    if (this.user) {
+      this.isLogged = true;
+    }
+
+    
     this.initBuildForm();
     this.dataUser = this.localService.getDataUserPerfilSE();
     this.localService.editPerfilObs$.subscribe(e => this.editPerfil = e);
+
+    this.localService.dataRouteObs$.subscribe({
+      next: e => this.dataRoute = e
+    });
+
+    this.dataRoute = this.localService.getDataRouteSE();
+
+  }
+
+  routerSesiones(){
+    this.route.navigate(['windows/perfil'])
   }
 
   initBuildForm() {
@@ -71,8 +98,17 @@ export class UserComponent implements OnInit {
   }
 
 
+  onLogout() {
+    this.authSvc.logout();
+    this.route.navigate(['/']);
+  }
 
-
+  editPeffil() {
+    console.log('editar')
+    const edit = true;
+    this.localService.edit(edit);
+  }
+ 
 
 
 }

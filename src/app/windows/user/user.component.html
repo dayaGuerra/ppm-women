@@ -1,42 +1,73 @@
 
+
+
 <!--Inicio de maquetado de la pantalla principal para rellenar-->
-
-<div class="media pt-5">
-  <img src="{{dataUser.urlPerfil}}" class="mr-3 imagen-card" alt="foto de usuario">
-  <div class="media-body">
-    <h5 class="mt-0">{{dataUser.nombreCompleto}}</h5>
-    {{dataUser.emprendimientoTitulo}} Emprendimiento
+<div class="row align-self-center space">
+  <div class="col col-4">
+    <img src="{{dataUser.urlPerfil}}" class="mr-3 imagen-card" alt="foto de usuario">
   </div>
+  <div class="col text-left margin">
+    <h4 class="mt-0 titulo">{{dataUser.nombreCompleto}}</h4>
+    <span class="texto">{{dataUser.emprendimientoTitulo}} Emprendimiento</span> 
+    <div class="row justify-content-left margin" >
+      <div class="col ">
+       <button class="btn btn-header btn-outline-warning" id="color-btn" type="button" (click)="onLogout()" *ngIf="isLogged">
+      Salir
+      </button>
+      </div>
+      <div class="col ">
+        
+    <button class="btn btn-header btn-outline-warning" id="color-btn" type="button" (click)="editPeffil()" *ngIf="dataRoute.path === 'perfil'">
+    Editar
+    </button>
+      </div>
+    </div>
+  </div>
+  
 </div>
 
-<div class="card" >
-  <div class="card-body">
-    <h5 class="card-title">Sobre mi</h5>
-    <p class="card-text">{{dataUser.sobremi}} Texto referencial a ser editado</p>
-  </div>
+
+<div class="col space">
+<div class="text-left">
+  <h4 class="subtitulo1">Sobre mi</h4>
+  <p class="texto2">{{dataUser.sobremi}} Agregar texto</p>
+</div>
 </div>
 
-<h3 class="card-title">Mi Emprendimiento</h3>
-<div class="media pt-5">
-  <img src="{{dataUser.logoEmprendimiento}}" class="mr-3" alt="logo-emprendimiento">
-  <div class="media-body">
-    <h5 class="mt-0">{{dataUser.emprendimientoTitulo}}Nombre </h5>
-    {{dataUser.emprendimientoSubtitulo}} Descripción del emprendimiento
+<div class=" col text-left space">
+  <h4 class="subtitulo2">Emprendimiento</h4>
+<div class="row align-self-center">
+  <div class="col col-4">
+    <img src="{{dataUser.logoEmprendimiento}}" class="mr-3" alt="logotipo">
+  </div>
+  <div class="col text-left">
+    <h5 class="mt-0" style="font-weight: 700;">{{dataUser.emprendimientoTitulo}} Nombre</h5>
+    <p class="texto2">{{dataUser.emprendimientoSubtitulo}} Descripción del emprendimiento</p>
   </div>
 </div>
+</div>
 
-<div>
-  <h3 class="card-title">Visita mi página</h3>
-  <p>{{dataUser.urlPagina}}</p>
 
-  <div>
-    <a class="btn" href="{{dataUser.urlPagina}}">Visitar</a>
+
+  <div class=" col space text-left">
+    <h4 class="subtitulo3">Visita mi página</h4>
+    <a class="texto2" style="font-weight: 700;" href="{{dataUser.urlPagina}}"><span>{{dataUser.urlPagina}} Url- página</span></a>
   </div>
+
+
+ 
+
+ 
+
+
+
+
+ 
 
 <!--Fin de maquetado de la pantalla principal para rellenar-->
 
 
-
+<div>
 <div *ngIf="editPerfil === true" class="modl-message modal-dialog modal-dialog-centered modal-dialog-scrollable" >
     <div class="modal-content">
       <div class="modal-header">
@@ -97,3 +128,4 @@
     </div>
 </div>
 
+</div>
