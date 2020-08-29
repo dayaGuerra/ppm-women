@@ -4,10 +4,19 @@
     <img class="image-header" src="{{user.photoURL}}" alt="Foto de perfil">
   </li>
 
+  <div>
+    <h4 class="card-title">{{dataRoute.title}}</h4>
+  </div>
+
 <button class="btn btn-header" type="button" routerLink="/login" *ngIf="!isLogged">
  Iniciar sesión
 </button>
-<button class="btn btn-header" type="button" routerLink="/" (click)="onLogout()" *ngIf="isLogged">
+<button class="btn btn-header" type="button" (click)="onLogout()" *ngIf="isLogged">
   Salir
  </button>
+
+ <button class="btn btn-header" type="button" (click)="editPeffil()" *ngIf="dataRoute.path === 'perfil'">
+  Editar
+ </button>
+
 </nav>

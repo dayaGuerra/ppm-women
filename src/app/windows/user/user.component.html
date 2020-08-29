@@ -1,1 +1,103 @@
-<p>perfil</p>
+<div class="pt-5">
+  <div class="d-flex">
+    <div class="">
+      <img src="{{dataUser.urlPerfil}}"
+      class="imagen-card" alt="foto-de-perfil">
+    </div>
+    <div class="">
+      <h5 class="card-title">{{dataUser.nombreCompleto}}</h5>
+      <p class="card-text"><small class="text-muted">{{dataUser.emprendimientoTitulo}}</small></p>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="card-title">Sobre mi</h3>
+    <p>{{dataUser.sobremi}}</p>
+  </div>
+
+  <div>
+    <h3 class="card-title">Mi Emprendimiento</h3>
+    <div class="">
+      <img src="{{dataUser.logoEmprendimiento}}"
+      class="imagen-card" alt="logo de pagina">
+    </div>
+    <div>
+      <h5 class="card-title">{{dataUser.emprendimientoTitulo}}</h5>
+      <p class="card-text"><small class="text-muted">{{dataUser.emprendimientoSubtitulo}}</small></p>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="card-title">Visita mi página</h3>
+    <p>{{dataUser.urlPagina}}</p>
+
+    <div>
+      <a class="btn" href="{{dataUser.urlPagina}}">Visitar</a>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<div *ngIf="editPerfil === true" class="modl-message modal-dialog modal-dialog-centered modal-dialog-scrollable" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Perfil</h5>
+        <button type="button" class="close" (click)="closeModl()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formDataUser">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Foto Perfil</label>
+            <input type="file" class="form-control" id="exampleInputEmail1"  aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" class="form-control" formControlName="nombreCompleto" id="nombre">
+          </div>
+          <div class="form-group">
+            <label for="celular">Celular</label>
+            <input type="number" class="form-control" formControlName="celular" id="celular">
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono fijo</label>
+            <input type="number" class="form-control" formControlName="telefono" id="telefono">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" formControlName="email" id="email">
+          </div>
+
+          <div class="form-group">
+            <label for="sobremi">Sobre mí</label>
+            <textarea class="form-control" id="sobremi" formControlName="sobreMi" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="logoempre">Logo de emprendimiento</label>
+            <input type="file" class="form-control" id="logoempre">
+          </div>
+          <div class="form-group">
+            <label for="emprendimiento">Emprendimiento</label>
+            <input type="text" class="form-control" id="emprendimiento" formControlName="emprendimiento">
+          </div>
+          <div class="form-group">
+            <label for="rubro">Rubro</label>
+            <input type="text" class="form-control" id="rubro" formControlName="rubro">
+          </div>
+          <div class="form-group">
+            <label for="pagina">Página web (Link)</label>
+            <input type="text" class="form-control" id="pagina" formControlName="paginaWeb">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModl()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="saveData()">Guardar</button>
+      </div>
+    </div>
+</div>
+

@@ -19,12 +19,18 @@ export class LoginComponent implements OnInit {
   }
 
   subsDataUser() {
-    this.authSvc.getDataUser().subscribe(e => e.forEach(doc => {
+    this.authSvc.getDataUser().subscribe(e => {
+      console.log(e)
+      e.forEach(doc => {
+        console.log(doc.id, doc.data())
       if (doc.data()) {
         this.dataUsers.push(doc.data());
       }
-    }));
+    })
+  });
   }
+
+
 
 
   async onGoogleLogin() {
