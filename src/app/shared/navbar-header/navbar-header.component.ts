@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
-import { Router } from '@angular/router';
+import { LocalService } from '../../core/services/local.service';
+import { DataRoute } from '../../models/route.interface';
 
 @Component({
   selector: 'app-navbar-header',
@@ -12,19 +14,40 @@ export class NavbarHeaderComponent implements OnInit {
   public isLogged = false;
   public user:any;
 
-  constructor(private authSvc: AuthService, public route: Router) { }
+  dataRoute: DataRoute = {
+    path: '',
+    title: ''
+  };
+
+  constructor(private authSvc: AuthService,
+              public localService: LocalService,
+              private router: ActivatedRoute,
+              private route: Router) { }
 
  async ngOnInit() {
     this.user = await this.authSvc.getCurrentUser();
-    console.log(this.user);
     if (this.user) {
       this.isLogged = true;
     }
+
+    this.localService.dataRouteObs$.subscribe({
+      next: e => this.dataRoute = e
+    });
+
+    this.dataRoute = this.localService.getDataRouteSE();
   }
 
   onLogout() {
     this.authSvc.logout();
+    this.route.navigate(['/']);
   }
+
+  editPeffil() {
+    console.log('editar')
+    const edit = true;
+    this.localService.edit(edit);
+  }
+
 
 routerHome(){
   this.route.navigate(['/windows/home']);

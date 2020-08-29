@@ -1,5 +1,4 @@
-
-export interface DataUsPerfil {
+export class DataUserPerfil {
   celular: string;
   email: string;
   emprendimientoSubtitulo: string;
@@ -12,4 +11,3 @@ export interface DataUsPerfil {
   urlPagina: string;
   urlPerfil: string;
 }
-
