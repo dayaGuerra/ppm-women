@@ -1,7 +1,7 @@
 .imagen-card {
   border-radius: 100%;
-  max-width: 50px;
-  max-height: 50px;
+  width: 100px;
+  height: 100px;
 }
 
 .modl-message {
@@ -24,3 +24,5 @@
 .content-alerts {
   width: 100%;
 }
+
+

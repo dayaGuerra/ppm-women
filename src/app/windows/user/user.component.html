@@ -1,43 +1,39 @@
-<div class="pt-5">
-  <div class="d-flex">
-    <div class="">
-      <img src="{{dataUser.urlPerfil}}"
-      class="imagen-card" alt="foto-de-perfil">
-    </div>
-    <div class="">
-      <h5 class="card-title">{{dataUser.nombreCompleto}}</h5>
-      <p class="card-text"><small class="text-muted">{{dataUser.emprendimientoTitulo}}</small></p>
-    </div>
+
+<!--Inicio de maquetado de la pantalla principal para rellenar-->
+
+<div class="media pt-5">
+  <img src="{{dataUser.urlPerfil}}" class="mr-3 imagen-card" alt="foto de usuario">
+  <div class="media-body">
+    <h5 class="mt-0">{{dataUser.nombreCompleto}}</h5>
+    {{dataUser.emprendimientoTitulo}} Emprendimiento
   </div>
-
-  <div>
-    <h3 class="card-title">Sobre mi</h3>
-    <p>{{dataUser.sobremi}}</p>
-  </div>
-
-  <div>
-    <h3 class="card-title">Mi Emprendimiento</h3>
-    <div class="">
-      <img src="{{dataUser.logoEmprendimiento}}"
-      class="imagen-card" alt="logo de pagina">
-    </div>
-    <div>
-      <h5 class="card-title">{{dataUser.emprendimientoTitulo}}</h5>
-      <p class="card-text"><small class="text-muted">{{dataUser.emprendimientoSubtitulo}}</small></p>
-    </div>
-  </div>
-
-  <div>
-    <h3 class="card-title">Visita mi página</h3>
-    <p>{{dataUser.urlPagina}}</p>
-
-    <div>
-      <a class="btn" href="{{dataUser.urlPagina}}">Visitar</a>
-    </div>
-
-  </div>
-
 </div>
+
+<div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">Sobre mi</h5>
+    <p class="card-text">{{dataUser.sobremi}} Texto referencial a ser editado</p>
+  </div>
+</div>
+
+<h3 class="card-title">Mi Emprendimiento</h3>
+<div class="media pt-5">
+  <img src="{{dataUser.logoEmprendimiento}}" class="mr-3" alt="logo-emprendimiento">
+  <div class="media-body">
+    <h5 class="mt-0">{{dataUser.emprendimientoTitulo}}Nombre </h5>
+    {{dataUser.emprendimientoSubtitulo}} Descripción del emprendimiento
+  </div>
+</div>
+
+<div>
+  <h3 class="card-title">Visita mi página</h3>
+  <p>{{dataUser.urlPagina}}</p>
+
+  <div>
+    <a class="btn" href="{{dataUser.urlPagina}}">Visitar</a>
+  </div>
+
+<!--Fin de maquetado de la pantalla principal para rellenar-->
 
 
 
