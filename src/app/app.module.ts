@@ -14,6 +14,7 @@ import { SharedModule } from './shared/shared.module';
 import { FormComponent } from './form/form.component';
 import { AcuerdoComponent } from './acuerdo/acuerdo.component';
 import { AcuerdoTwoComponent } from './acuerdo-two/acuerdo-two.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AcuerdoTwoComponent } from './acuerdo-two/acuerdo-two.component';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     
   ],
   exports: [
