@@ -3,3 +3,63 @@
   max-width: 50px;
   max-height: 50px;
 }
+
+.background-contact{
+  background-image: url("../../../assets/contacto.svg");
+  width: 100px;
+  height: 100px;
+  background-position-x: -11px;
+  background-position-y: -20px;
+  background-repeat: no-repeat;
+}
+
+.margin-top{
+  margin-top: 90px
+}
+
+.margin-bottom{
+margin-bottom: 80px;
+}
+
+
+.contact-list {
+	display: block;
+  padding: 2px;
+}
+
+.contact-list tbody {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.tamaño{
+width: 30px;
+height: 30px;
+padding: 0;
+border-style: none;
+}
+
+.margin{
+  margin-right: 15px;
+}
+
+.titulo{
+  color:#009193;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.subtitulo{
+  color: #a00046;
+}
+
+.col-h{
+  position: relative;
+    width: 100%;
+    /* padding-right: 15px; */
+    padding-left: 15px;
+}

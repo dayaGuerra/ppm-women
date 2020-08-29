@@ -49,5 +49,12 @@ export class NavbarHeaderComponent implements OnInit {
   }
 
 
+routerHome(){
+  this.route.navigate(['/windows/home']);
+}
+
+routerPerfil(){
+  this.route.navigate(['/windows/perfil']);
+}
 
 }

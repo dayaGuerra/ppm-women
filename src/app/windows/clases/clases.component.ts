@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-clases',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClasesComponent implements OnInit {
 
-  constructor() { }
+  constructor( public route: Router) { }
 
   ngOnInit(): void {
+  }
+
+women() {
+    this.route.navigate(['/windows/women']);
+  }
+  
+  podcast() {
+    this.route.navigate(['/windows/podcast']);
+  }
+
+  varios() {
+    this.route.navigate(['/windows/varios']);
   }
 
 }

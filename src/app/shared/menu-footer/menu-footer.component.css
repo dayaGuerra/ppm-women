@@ -13,10 +13,13 @@
 
 .menu-footer {
   overflow: hidden;
-  background-color: #333;
+  background-color: #a00046;
   position: fixed;
   bottom: 0;
   width: 100%;
+  height: 100px;
+  border-radius: 15px 15px 0px 0px;
+  box-shadow: 0px -0.2px 1px 0px black;
 }
 
 .menu-footer a {
@@ -30,8 +33,21 @@
 }
 
 .menu-footer a:hover {
-  background: #f1f1f1;
-  color: black;
+  /*background: #ffffff;
+  
+  border-radius: 0px 0px 50px 50px;
+  padding: 14px 14px;
+  margin-bottom: 10px;*/
+  background-image: url("../../../assets/hover.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  margin-bottom: 3px;
+  color: #a00046;
+
 }
 
 .menu-footer a.active {

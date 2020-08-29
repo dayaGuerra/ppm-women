@@ -1,0 +1,45 @@
+.margin-top{
+    margin-top: 85px;
+    margin-bottom: 85px;
+    color:#a00046;
+}
+
+.tamaño{
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border-style: none;
+    }
+
+.font{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.content-image{
+    align-content: center;
+    text-align: center;
+   
+ 
+}
+
+.chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+    margin-bottom: 20px;
+  }
+  
+  .chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+
+  
