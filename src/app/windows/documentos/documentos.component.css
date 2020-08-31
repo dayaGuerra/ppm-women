@@ -1,6 +1,10 @@
 .margin{
-margin-bottom: 15px;
+margin-bottom: 80px;
 margin-top:15px;
 height: 50%;
-width: 400px;
+width: 300px;
+}
+
+.scroll{
+    overflow-x: hidden;
 }

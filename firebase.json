@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/ppm-women",
+    "public": "dist/PPM-Women",
     "ignore": [
       "firebase.json",
       "**/.*",
