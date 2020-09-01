@@ -13,7 +13,8 @@ export class NavbarHeaderComponent implements OnInit {
 
   public isLogged = false;
   public user:any;
-  public name:string ="";
+  public name:any="Mi agenda";
+  public nameRoute: any;
 
   dataRoute: DataRoute = {
     path: '',
@@ -23,9 +24,14 @@ export class NavbarHeaderComponent implements OnInit {
   constructor(private authSvc: AuthService,
               public localService: LocalService,
               private router: ActivatedRoute,
-              private route: Router) { }
+              private route: Router) {            
+               
+              }
+              
+            
 
  async ngOnInit() {
+
     this.user = await this.authSvc.getCurrentUser();
     if (this.user) {
       this.isLogged = true;
@@ -37,7 +43,15 @@ export class NavbarHeaderComponent implements OnInit {
 
     this.dataRoute = this.localService.getDataRouteSE();
 
-    this.nameroute();
+    this.localService.nombreRutaOb$.subscribe({
+      next: e  => this.name = e
+    })
+   
+  }
+
+  ngOnChanges(): void 
+  {
+
   }
 
   onLogout() {
@@ -54,38 +68,17 @@ export class NavbarHeaderComponent implements OnInit {
 
 routerHome(){
   this.route.navigate(['/windows/home']);
+  this.nameRoute = "Inicio";
+  this.localService.setNameRouter(this.nameRoute);
 }
 
 routerPerfil(){
   this.route.navigate(['/windows/perfil']);
+  this.nameRoute = "Mi perfil";
+  this.localService.setNameRouter(this.nameRoute);
 }
 
-nameroute(){
-  
-  if(this.route.url === "/windows/documentos" ){ 
-    this.name = "Mis documentos";
-    
-  }else if(this.route.url === "/windows/agenda" ){ 
-    this.name = "Mi agenda";
-  }else if(this.route.url === "/windows/clases" ){ 
-    this.name = "Mis sesiones";
-  }else if(this.route.url === "/windows/comunidad" ){ 
-    this.name = "Mi comunidad";
-  }else if(this.route.url === "/windows/perfil" ){ 
-    this.name = "Perfil";
-  }else if(this.route.url === "/windows/women" ){ 
-    this.name = " Women";
-  }else if(this.route.url === "/windows/otros" ){ 
-    this.name = "Otros";
-  }else if(this.route.url === "/windows/podcast" ){ 
-    this.name = "Podcast";
-  }else if(this.route.url === "/windows/home" ){ 
-    this.name = "Inicio";
-  }
-  else{
-    console.log("Esta no es su ruta")
-  }
+
+
 
 }
-}
-

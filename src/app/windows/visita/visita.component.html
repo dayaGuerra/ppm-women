@@ -1,0 +1,58 @@
+
+
+
+<!--<button type="button" class="margin-bottom" (click)="routerBack()">
+<img class="btn-back margin-top" src="../../../../assets/back.png" alt="icono-back"  />
+</button>-->
+<!--Inicio de maquetado de la pantalla principal para rellenar-->
+
+<div class="row align-self-center space">
+    <div class="col col-4">
+      <img src="{{dataUser.urlPerfil}}" class="mr-3 imagen-card" alt="foto de usuario">
+    </div>
+    <div class="col text-left margin">
+      <h4 class="mt-0 titulo">{{dataUser.nombreCompleto}}</h4>
+      <span class="texto">{{dataUser.emprendimientoTitulo}} </span> 
+       
+  </div>
+</div>
+  
+  <div class="col space">
+  <div class="text-left">
+    <h4 class="subtitulo1">Sobre mi</h4>
+    <p class="texto2">{{dataUser.sobremi}} </p>
+  </div>
+  </div>
+  
+  <div class=" col text-left space">
+    <h4 class="subtitulo2">Emprendimiento</h4>
+  <div class="row align-self-center">
+    <div class="col col-4">
+      <img src="{{dataUser.logoEmprendimiento}}" class="mr-3" alt="logotipo">
+    </div>
+    <div class="col text-left">
+      <h5 class="mt-0" style="font-weight: 700;">{{dataUser.emprendimientoTitulo}} </h5>
+      <p class="texto2">{{dataUser.emprendimientoSubtitulo}} </p>
+    </div>
+  </div>
+  </div>
+  
+  
+  
+    <div class=" col text-left ">
+      <h4 class="subtitulo3">Visita mi página</h4>
+      <a class="texto2" style="font-weight: 700;" href="{{dataUser.urlPagina}}"><span>{{dataUser.urlPagina}} </span></a>
+    </div>
+  
+  
+   
+  
+   
+  
+  
+  
+  
+   
+  
+  <!--Fin de maquetado de la pantalla principal para rellenar-->
+  

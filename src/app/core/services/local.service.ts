@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { DataRoute } from 'src/app/models/route.interface';
 import { DataUsPerfil } from 'src/app/models/user.interface';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocalService {
-
+ 
 
   // dataPerfilUserSubject = new Subject<any>();
   // dataPerfilUserObs$ = this.dataPerfilUserSubject.asObservable();
@@ -18,7 +19,21 @@ export class LocalService {
   editPerfilSubject = new Subject<boolean>();
   editPerfilObs$ = this.editPerfilSubject.asObservable();
 
-  constructor() {}
+  nombreRutaSubject = new Subject<any>()
+  nombreRutaOb$ = this.nombreRutaSubject.asObservable();
+
+
+ 
+
+  constructor(public route:Router) {}
+
+
+  setNameRouter(nameRoute:any){
+    this.nombreRutaSubject.next(nameRoute);
+    console.log("log- funcion set ",nameRoute)
+  }
+
+
 
   setDataUserPerfilSE(data: DataUsPerfil) {
     return sessionStorage.setItem('dataUserPerfil', JSON.stringify(data));
@@ -45,9 +60,7 @@ export class LocalService {
     this.editPerfilSubject.next(value);
   }
 
-
-
-
+ 
 
 }
 

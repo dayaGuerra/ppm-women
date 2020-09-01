@@ -11,6 +11,7 @@ import { WomenComponent } from './taller/women/women.component';
 import { VariosComponent } from './taller/varios/varios.component';
 import { PodcastComponent } from './taller/podcast/podcast.component';
 import { HomeComponent } from './home/home.component';
+import { VisitaComponent } from './visita/visita.component';
 //import { FormComponent } from './modal/form/form.component'
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
       { path: 'podcast', component: PodcastComponent},
       { path: 'home', component: HomeComponent},
       { path: 'varios', component: VariosComponent},
+      { path: 'visitante', component: VisitaComponent},
       
       
       { path: '',

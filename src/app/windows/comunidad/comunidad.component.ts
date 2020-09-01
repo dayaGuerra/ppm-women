@@ -35,12 +35,12 @@ export class ComunidadComponent implements OnInit, OnChanges{
   routePerfil(id: number) {
     const data = this.dataUsers.find(e => e.idUser === id);
     const dataR = {
-      path: 'perfil',
+      path: 'visitante',
       title: 'Mi Perfil'
     };
     this.localService.setDataUserPerfilSE(data);
     this.localService.addDataRoute(dataR);
-    this.route.navigate(['/windows/perfil']);
+    this.route.navigate(['/windows/visitante']);
   }
 
 

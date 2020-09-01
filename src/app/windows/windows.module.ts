@@ -14,6 +14,7 @@ import { WomenComponent } from './taller/women/women.component';
 import { PodcastComponent } from './taller/podcast/podcast.component';
 import { VariosComponent } from './taller/varios/varios.component';
 import { HomeComponent } from './home/home.component';
+import { VisitaComponent } from './visita/visita.component';
 //import { FormComponent } from './modal/form/form.component';
 
 
@@ -29,6 +30,7 @@ import { HomeComponent } from './home/home.component';
     PodcastComponent,
     VariosComponent,
     HomeComponent,
+    VisitaComponent,
   
   ],
   imports: [

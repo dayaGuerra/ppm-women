@@ -60,13 +60,13 @@ export class AuthService {
       idUser: idUs + 1,
       celular: '',
       email: data.email,
-      emprendimientoSubtitulo: '',
-      emprendimientoTitulo: '',
+      emprendimientoSubtitulo: 'Describe tu emprendimiento',
+      emprendimientoTitulo: 'Editar emprendimiento',
       logoEmprendimiento: '',
       nombreCompleto: data.displayName,
-      sobremi: '',
+      sobremi: 'Edita tu perfil',
       telefono: '',
-      urlPagina: '',
+      urlPagina: 'Edita tu página',
       urlPerfil: data.photoURL,
     };
     return this.afFirestore.collection('usuarios').add(dataU);
