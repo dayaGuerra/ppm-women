@@ -13,7 +13,7 @@ export class NavbarHeaderComponent implements OnInit {
 
   public isLogged = false;
   public user:any;
-  public name:any="Mi agenda";
+  public name:any="Mi roadmap";
   public nameRoute: any;
 
   dataRoute: DataRoute = {
@@ -68,7 +68,7 @@ export class NavbarHeaderComponent implements OnInit {
 
 routerHome(){
   this.route.navigate(['/windows/home']);
-  this.nameRoute = "Inicio";
+  this.nameRoute = "Mi roadmap";
   this.localService.setNameRouter(this.nameRoute);
 }
 
