@@ -66,3 +66,40 @@ img {
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
 }
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+  color: #a00046;
+  background-color: #a00046;
+  border-color: #a00046;
+  background-image: url("../../../assets/hover.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+
+.btn-primary{
+  color: #fff;
+  background-color: #a00046;
+  border-color: #a00046;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+  color: #a00046;
+  background-color: #a00046;
+  border-color: #a00046;
+}
+
+.btn-primary:hover {
+  color: #a00046;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+  color: #fff;
+  background-color: #a00046;
+  border-color: #a00046;
+  
+}

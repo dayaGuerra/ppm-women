@@ -1,22 +1,36 @@
-<div class="d-flex justify-content-center menu-footer">
-    <div class="contenido" (click)="routeAgenda()">
+<!--<div class="d-flex justify-content-center menu-footer">
+    <div type="radio" name="options" id="option1" autocomplete="off" checked="" class="contenido" >
         <a>  <i class="far fa-calendar fa-2x"></i><p>  Mi agenda</p> </a>
     </div>
-    <div class="contenido" (click)="routeClases()">
+    <div type="radio" name="options" id="option1" autocomplete="off" checked="" class="contenido" >
        <a> <i class="fas fa-tv fa-2x"></i><p>  Mis sesiones</p> </a>
     </div>
-    <div class="contenido" (click)="routeComunidad()">
+    <div type="radio" name="options" id="option1" autocomplete="off" checked="" class="contenido" >
     
         <a> <i class="fa fa-users fa-2x" aria-hidden="true"></i>  <p>  Mi comunidad</p> </a>
     </div>
-    <div class="contenido" (click)="routeDocumentos()">
+    <div type="radio" name="options" id="option1" autocomplete="off" checked="" class="contenido" >
 
         <a><i class="far fa-file-alt fa-2x"></i> <p>  Mis documentos</p></a>
     </div>
-</div>
+</div>-->
 
-
-
-
-
-
+<div class="btn-group btn-group-toggle menu-footer" data-toggle="buttons">
+    <div class="btn btn-primary" (click)="routeAgenda()">
+        <i class="far fa-calendar fa-2x"></i><br/>
+      <input type="radio" name="options" id="option1" autocomplete="off" > Mi agenda
+    </div>
+    <div class="btn btn-primary" (click)="routeClases()">
+        <i class="fas fa-tv fa-2x"></i><br/>
+      <input type="radio" name="options" id="option2" autocomplete="off"> Mis sesiones
+    </div>
+    <div class="btn btn-primary" (click)="routeComunidad()">
+        <i class="fa fa-users fa-2x" aria-hidden="true"></i><br/>
+      <input type="radio" name="options" id="option3" autocomplete="off"> Mi comunidad
+    </div>
+    <div class="btn btn-primary" (click)="routeDocumentos()">
+        <i class="far fa-file-alt fa-2x"></i><br/>
+        <input type="radio" name="options" id="option4" autocomplete="off"> Mis documentos
+      </div>
+   
+  </div>
