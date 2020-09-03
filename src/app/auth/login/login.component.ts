@@ -42,9 +42,9 @@ export class LoginComponent implements OnInit {
       if (user && indexU === undefined) {
         let idUs = this.dataUsers.length;
         this.authSvc.saveUserData(user.user, idUs);
-        this.router.navigate(['/form']);
+        this.router.navigate(['/windows/home']);
       } else {
-        this.router.navigate(['/form']);
+        this.router.navigate(['/windows/home']);
       }
     } catch (error) {
       console.log('erorsito', error);
