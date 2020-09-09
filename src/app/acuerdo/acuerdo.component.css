@@ -2,15 +2,37 @@ body{
     background-color: #a00046 ;
 }
 .tamaño {
-    background-image: url("../../assets/acuerdo1.jpg");
+    background-image: url("../../assets/background-acuerdo.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    min-width: 100%;
+    min-height: 1024px;
     width: 100%;
-    
-    height: 47rem;
+    height: auto;  
 }
 
+.margin-left{
+    margin-left: 25px;
+}
+
+.margin-top{
+    margin-top:80px
+}
+
+.color-text{
+    color: #ffffff
+}
+
+.color-text2{
+    color: #fbb03b;
+}
+
+#color-text-btn{
+    color:#a00046
+}
+
+/*
 .button{
 margin-top: 500px;
 margin-left: 80px;
@@ -27,3 +49,4 @@ margin-left: 150px;
 
 }
 
+*/

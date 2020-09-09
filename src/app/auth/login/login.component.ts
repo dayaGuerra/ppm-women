@@ -39,11 +39,17 @@ export class LoginComponent implements OnInit {
       if (user && indexU === undefined) {
         let idUs = user.user.uid;
         this.authSvc.saveUserData(user.user, idUs);
+<<<<<<< HEAD
         this.subsDataUser();
         this.router.navigate(['/form']);
       } else {
         this.localService.setUserLogSE(indexU);
         this.router.navigate(['/form']);
+=======
+        this.router.navigate(['/windows/home']);
+      } else {
+        this.router.navigate(['/windows/home']);
+>>>>>>> f81b1a680476d29d475e9734c17eb1ba97a188d4
       }
     } catch (error) {
       console.log('erorsito', error);
