@@ -2,27 +2,24 @@
     <div  *ngFor="let item of dataUsers" >
       <div class="row ">
       <div class="col-2 ">
-        <img src="{{item.urlPerfil}}"
+        <img src="{{item.data.urlPerfil}}"
         class="imagen-card" alt="Img">
       </div>
 
       <div class="col">
-        <h5 class="titulo">{{item.nombreCompleto}}</h5>
-        <p class="subtitulo"><small class="text-muted">{{item.emprendimientoTitulo}}</small>
+        <h5 class="titulo">{{item.data.nombreCompleto}}</h5>
+        <p class="subtitulo"><small class="text-muted">{{item.data.emprendimientoTitulo}}</small>
       </p>
       </div>
 
 
       <div class="row ">
         <div class="col">
-          <img class="tamaño" src="../../../assets/eye.png" alt="button-image" (click)="routePerfil(item.idUser)" />
+          <img class="tamaño" src="../../../assets/eye.png" alt="button-image" (click)="routePerfil(item.data.idUser)" />
         </div>
         <div class="col">
-        
            <img class="tamaño margin" src="../../../assets/whatsapp.png" alt="button-whatsapp" />
-         
         </div>
-        
       </div>
     </div>
     <hr/>

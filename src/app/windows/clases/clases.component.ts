@@ -10,13 +10,12 @@ export class ClasesComponent implements OnInit {
 
   constructor( public route: Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-women() {
+  women() {
     this.route.navigate(['/windows/women']);
   }
-  
+
   podcast() {
     this.route.navigate(['/windows/podcast']);
   }

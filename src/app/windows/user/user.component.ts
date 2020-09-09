@@ -15,9 +15,25 @@ import { DataRoute } from '../../models/route.interface';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
-  public isLogged = false;
-  public user:any;
-  dataUser = new DataUserPerfil();
+  public isLogged: boolean;
+  public user: any;
+  dataUser: any = {
+    data: {
+    idUser: '',
+    celular: '',
+    email: '',
+    emprendimientoSubtitulo: '',
+    emprendimientoTitulo: '',
+    logoEmprendimiento: '',
+    nombreCompleto: '',
+    sobremi: '',
+    telefono: '',
+    urlPagina: '',
+    urlPerfil: '',
+    },
+    id: ''
+  };
+
   editPerfil: boolean = false;
 
   formDataUser: FormGroup;
@@ -26,34 +42,27 @@ export class UserComponent implements OnInit {
     path: '',
     title: ''
   };
+
   constructor( public localService: LocalService,
                private autService: AuthService,
                private buildForm: FormBuilder,
-               public route:Router,
-               private authSvc:AuthService) { }
+               public route: Router,
+               private authSvc: AuthService) { }
 
- async ngOnInit(){
-
+  async ngOnInit() {
     this.user = await this.authSvc.getCurrentUser();
-    if (this.user) {
-      this.isLogged = true;
-    }
 
-    
     this.initBuildForm();
     this.dataUser = this.localService.getDataUserPerfilSE();
-    this.localService.editPerfilObs$.subscribe(e => this.editPerfil = e);
-
-    this.localService.dataRouteObs$.subscribe({
-      next: e => this.dataRoute = e
-    });
-
+    console.log(this.dataUser)
     this.dataRoute = this.localService.getDataRouteSE();
+    console.log(this.dataRoute)
+
 
   }
 
-  routerSesiones(){
-    this.route.navigate(['windows/perfil'])
+  routerSesiones() {
+    this.route.navigate(['windows/perfil']);
   }
 
   initBuildForm() {
@@ -71,32 +80,28 @@ export class UserComponent implements OnInit {
 
   get form() { return this.formDataUser.controls; }
 
-
   saveData() {
-    console.log(this.form)
     const data = {
-      idUser: this.dataUser.idUser,
-      celular: this.form.celular.value !== null ? this.form.celular.value : this.dataUser.celular,
-      email: this.form.email.value !== null ? this.form.email.value : this.dataUser.email,
-      emprendimientoSubtitulo: this.form.emprendimiento.value !== null ? this.form.emprendimiento.value : this.dataUser.emprendimientoTitulo,
-      emprendimientoTitulo: this.form.rubro.value !== null ? this.form.rubro.value : this.dataUser.emprendimientoSubtitulo,
-      logoEmprendimiento: this.dataUser.logoEmprendimiento,
-      nombreCompleto: this.form.nombreCompleto.value !== null ? this.form.nombreCompleto.value : this.dataUser.nombreCompleto,
-      sobremi: this.form.sobreMi.value !== null ? this.form.sobreMi.value : this.dataUser.sobremi,
-      telefono: this.form.telefono.value !== null ? this.form.telefono.value : this.dataUser.telefono,
-      urlPagina: this.form.paginaWeb.value !== null ? this.form.paginaWeb.value : this.dataUser.urlPagina,
-      urlPerfil: this.dataUser.urlPerfil,
+      idUser: this.dataUser.data.idUser,
+      celular: this.form.celular.value !== null ? this.form.celular.value : this.dataUser.data.celular,
+      email: this.form.email.value !== null ? this.form.email.value : this.dataUser.data.email,
+      emprendimientoSubtitulo: this.form.emprendimiento.value !== null ? this.form.emprendimiento.value : this.dataUser.data.emprendimientoTitulo,
+      emprendimientoTitulo: this.form.rubro.value !== null ? this.form.rubro.value : this.dataUser.data.emprendimientoSubtitulo,
+      logoEmprendimiento: this.dataUser.data.logoEmprendimiento,
+      nombreCompleto: this.form.nombreCompleto.value !== null ? this.form.nombreCompleto.value : this.dataUser.data.nombreCompleto,
+      sobremi: this.form.sobreMi.value !== null ? this.form.sobreMi.value : this.dataUser.data.sobremi,
+      telefono: this.form.telefono.value !== null ? this.form.telefono.value : this.dataUser.data.telefono,
+      urlPagina: this.form.paginaWeb.value !== null ? this.form.paginaWeb.value : this.dataUser.data.urlPagina,
+      urlPerfil: this.dataUser.data.urlPerfil,
     };
-    this.dataUser = data;
-    this.autService.editUserData(data);
+    this.dataUser.data = data;
+    this.autService.editUserData(data, this.dataUser);
     this.closeModl();
   }
-
 
   closeModl() {
     this.editPerfil = false;
   }
-
 
   onLogout() {
     this.authSvc.logout();
@@ -104,12 +109,8 @@ export class UserComponent implements OnInit {
   }
 
   editPeffil() {
-    console.log('editar')
-    const edit = true;
-    this.localService.edit(edit);
+    this.editPerfil = true;
   }
- 
-
 
 }
 

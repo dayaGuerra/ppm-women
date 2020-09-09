@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class LocalService {
- 
 
   // dataPerfilUserSubject = new Subject<any>();
   // dataPerfilUserObs$ = this.dataPerfilUserSubject.asObservable();
@@ -22,18 +21,20 @@ export class LocalService {
   nombreRutaSubject = new Subject<any>()
   nombreRutaOb$ = this.nombreRutaSubject.asObservable();
 
-
- 
-
   constructor(public route:Router) {}
-
 
   setNameRouter(nameRoute:any){
     this.nombreRutaSubject.next(nameRoute);
     console.log("log- funcion set ",nameRoute)
   }
 
+  setUserLogSE(data) {
+    return sessionStorage.setItem('dataUserLog', JSON.stringify(data));
+  }
 
+  getUserLogSE() {
+    return JSON.parse(sessionStorage.getItem('dataUserLog'));
+  }
 
   setDataUserPerfilSE(data: DataUsPerfil) {
     return sessionStorage.setItem('dataUserPerfil', JSON.stringify(data));
@@ -60,7 +61,8 @@ export class LocalService {
     this.editPerfilSubject.next(value);
   }
 
- 
-
 }
+
+
+
 

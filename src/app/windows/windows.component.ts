@@ -9,7 +9,10 @@ export class WindowsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }
+
+
+
+
