@@ -9,10 +9,10 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   public isLogged = false;
-  public user:any;
+  public user: any;
 
-  constructor(private authSvc: AuthService, public route: Router) { }
-
+  constructor(private authSvc: AuthService,
+              public route: Router) { }
 
   async ngOnInit() {
     this.user = await this.authSvc.getCurrentUser();
@@ -26,12 +26,12 @@ export class HomeComponent implements OnInit {
     this.authSvc.logout();
   }
 
-routerHome(){
-  this.route.navigate(['/windows/home']);
-}
+  routerHome() {
+    this.route.navigate(['/windows/home']);
+  }
 
-routerPerfil(){
-  this.route.navigate(['/windows/perfil']);
-}
+  routerPerfil() {
+    this.route.navigate(['/windows/perfil']);
+  }
 
 }

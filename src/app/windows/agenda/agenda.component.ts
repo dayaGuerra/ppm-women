@@ -9,19 +9,20 @@ import { AuthService } from '../../core/services/auth.service';
 })
 export class AgendaComponent implements OnInit {
   public isLogged = false;
-  public user:any;
+  public user: any;
 
   constructor(private authSvc: AuthService) { }
 
  async ngOnInit() {
     console.log('Navbar');
     this.user = await this.authSvc.getCurrentUser();
-    if(this.user){
+    if (this.user) {
       this.isLogged = true;
     }
-  }
+ }
 
-  onLogout(){
-    this.authSvc.logout();  }
+  onLogout() {
+    this.authSvc.logout();
+  }
 
 }

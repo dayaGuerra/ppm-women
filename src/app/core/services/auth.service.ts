@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { first } from 'rxjs/operators';
+import { first, map } from 'rxjs/operators';
 // Importando Firebase
-import { auth, firestore } from 'firebase/app';
+import { auth, firestore,  } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { User } from 'firebase';
+import { LocalService } from './local.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,7 @@ export class AuthService {
   public dataUser: Subject<any>;
 
   constructor(public afAuth: AngularFireAuth,
+              public localService: LocalService,
               public afFirestore: AngularFirestore) {
     this.userData$ = afAuth.authState;
   }
@@ -52,13 +54,18 @@ export class AuthService {
    return this.afFirestore.collection('usuarios').get();
   }
 
-
+  getDataUserTiempoReal() {
+    this.afFirestore.collection('usuarios').snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+       console.log(a)
+      })) );
+  }
 
   // Crear usuario en Firestore
   saveUserData(data: any, idUs) {
     const dataU = {
-      idUser: idUs + 1,
-      celular: '',
+      idUser: idUs,
+      celular: '5555555',
       email: data.email,
       emprendimientoSubtitulo: 'Describe tu emprendimiento',
       emprendimientoTitulo: 'Editar emprendimiento',
@@ -69,27 +76,20 @@ export class AuthService {
       urlPagina: 'Edita tu página',
       urlPerfil: data.photoURL,
     };
+
+    this.localService.setUserLogSE({data: dataU, id: ''});
     return this.afFirestore.collection('usuarios').add(dataU);
   }
 
-  editUserData(data: any) {
-    console.log(data)
-    this.afFirestore.collection('usuarios').add(data);
-
-
-    const ref = this.afFirestore.collection('usuarios').doc("DC");
-
-    return ref.update({
-        capital: true
+  editUserData(data: any, dataUser: any) {
+    const ref = this.afFirestore.collection('usuarios').doc(dataUser.id);
+    return ref.set(data)
+    .then(() => {
+    console.log('Document successfully updated!');
     })
-    .then(function() {
-    console.log("Document successfully updated!");
-    })
-    .catch(function(error) {
-    // The document probably doesn't exist.
-    console.error("Error updating document: ", error);
+    .catch((error) => {
+    console.error('Error updating document: ', error);
     });
-
   }
 
 

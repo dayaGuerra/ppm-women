@@ -24,13 +24,10 @@ export class NavbarHeaderComponent implements OnInit {
   constructor(private authSvc: AuthService,
               public localService: LocalService,
               private router: ActivatedRoute,
-              private route: Router) {            
-               
+              private route: Router) {
               }
-              
-            
 
- async ngOnInit() {
+  async ngOnInit() {
 
     this.user = await this.authSvc.getCurrentUser();
     if (this.user) {
@@ -45,13 +42,7 @@ export class NavbarHeaderComponent implements OnInit {
 
     this.localService.nombreRutaOb$.subscribe({
       next: e  => this.name = e
-    })
-   
-  }
-
-  ngOnChanges(): void 
-  {
-
+    });
   }
 
   onLogout() {
@@ -65,20 +56,16 @@ export class NavbarHeaderComponent implements OnInit {
     this.localService.edit(edit);
   }
 
+  routerHome() {
+    this.route.navigate(['/windows/home']);
+    this.nameRoute = "Inicio";
+    this.localService.setNameRouter(this.nameRoute);
+  }
 
-routerHome(){
-  this.route.navigate(['/windows/home']);
-  this.nameRoute = "Inicio";
-  this.localService.setNameRouter(this.nameRoute);
-}
-
-routerPerfil(){
-  this.route.navigate(['/windows/perfil']);
-  this.nameRoute = "Mi perfil";
-  this.localService.setNameRouter(this.nameRoute);
-}
-
-
-
+  routerPerfil() {
+    this.route.navigate(['/windows/perfil']);
+    this.nameRoute = "Mi perfil";
+    this.localService.setNameRouter(this.nameRoute);
+  }
 
 }

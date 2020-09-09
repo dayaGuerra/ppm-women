@@ -2,67 +2,69 @@
 
 
 <!--Inicio de maquetado de la pantalla principal para rellenar-->
-<div class="row align-self-center space">
-  <div class="col col-4">
-    <img src="{{dataUser.urlPerfil}}" class="mr-3 imagen-card" alt="foto de usuario">
-  </div>
-  <div class="col text-left margin">
-    <h4 class="mt-0 titulo">{{dataUser.nombreCompleto}}</h4>
-    <span class="texto">{{dataUser.emprendimientoTitulo}}</span> 
-    <div class="row justify-content-left margin" >
-      <div class="col ">
-       <button class=" btn-outline-warning" id="color-btn" type="button" (click)="onLogout()" *ngIf="isLogged">
-      Salir
-      </button>
-     
-      </div>
-      <div class="col ">
-         <button class=" btn-outline-warning" id="color-btn" type="button" (click)="editPeffil()" >
-        Editar
+<div>
+  <div class="row align-self-center space">
+    <div class="col col-4">
+      <img src="{{dataUser.data.urlPerfil}}" class="mr-3 imagen-card" alt="foto de usuario">
+    </div>
+    <div class="col text-left margin">
+      <h4 class="mt-0 titulo">{{dataUser.data.nombreCompleto}}</h4>
+      <span class="texto">{{dataUser.data.emprendimientoTitulo}}</span>
+      <div class="row justify-content-left margin" >
+        <div class="col ">
+         <button class=" btn-outline-warning" id="color-btn" type="button" (click)="onLogout()" *ngIf="isLogged">
+        Salir
         </button>
+
+        </div>
+        <div *ngIf="dataRoute.title === 'Mi Perfil'" class="col ">
+           <button class=" btn-outline-warning" id="color-btn" type="button" (click)="editPeffil()" >
+          Editar
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-  
-</div>
 
-
-<div class="col space">
-<div class="text-left">
-  <h4 class="subtitulo1">Sobre mi</h4>
-  <p class="texto2">{{dataUser.sobremi}}</p>
-</div>
-</div>
-
-<div class=" col text-left space">
-  <h4 class="subtitulo2">Emprendimiento</h4>
-<div class="row align-self-center">
-  <div class="col col-4">
-    <img src="{{dataUser.logoEmprendimiento}}" class="mr-3" alt="logotipo">
-  </div>
-  <div class="col text-left">
-    <h5 class="mt-0" style="font-weight: 700;">{{dataUser.emprendimientoTitulo}} </h5>
-    <p class="texto2">{{dataUser.emprendimientoSubtitulo}}</p>
-  </div>
-</div>
-</div>
-
-
-
-  <div class=" col text-left ">
-    <h4 class="subtitulo3">Visita mi página</h4>
-    <a class="texto2" style="font-weight: 700;" href="{{dataUser.urlPagina}}"><span>{{dataUser.urlPagina}}</span></a>
   </div>
 
 
- 
+  <div class="col space">
+  <div class="text-left">
+    <h4 class="subtitulo1">Sobre mi</h4>
+    <p class="texto2">{{dataUser.data.sobremi}}</p>
+  </div>
+  </div>
 
- 
+  <div class=" col text-left space">
+    <h4 class="subtitulo2">Emprendimiento</h4>
+  <div class="row align-self-center">
+    <div class="col col-4">
+      <img src="{{dataUser.data.logoEmprendimiento}}" class="mr-3" alt="logotipo">
+    </div>
+    <div class="col text-left">
+      <h5 class="mt-0" style="font-weight: 700;">{{dataUser.data.emprendimientoTitulo}} </h5>
+      <p class="texto2">{{dataUser.data.emprendimientoSubtitulo}}</p>
+    </div>
+  </div>
+  </div>
+
+
+
+    <div class=" col text-left ">
+      <h4 class="subtitulo3">Visita mi página</h4>
+      <a class="texto2" style="font-weight: 700;" href="{{dataUser.data.urlPagina}}"><span>{{dataUser.data.urlPagina}}</span></a>
+    </div>
+
+</div>
 
 
 
 
- 
+
+
+
+
+
 
 <!--Fin de maquetado de la pantalla principal para rellenar-->
 

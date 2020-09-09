@@ -13,28 +13,21 @@ import { DataUserPerfil } from 'src/app/models/user-perfil';
 })
 export class VisitaComponent implements OnInit {
   public isLogged = false;
-  public user:any;
+  public user: any;
   dataUser = new DataUserPerfil();
   editPerfil: boolean = false;
-
   formDataUser: FormGroup;
-
-  dataRoute: DataRoute = {
-    path: '',
-    title: ''
-  };
+  dataRoute: DataRoute = { path: '', title: '' };
 
   constructor( public localService: LocalService,
-    public router:Router,
-   ) {
-     }
+               public router: Router, ) {}
 
-async ngOnInit(){
-this.dataUser = this.localService.getDataUserPerfilSE();
-}
+  async ngOnInit() {
+    this.dataUser = this.localService.getDataUserPerfilSE();
+  }
 
-routerBack(){
-  this.router.navigate(['windows/visitante'])
+  routerBack() {
+    this.router.navigate(['windows/visitante']);
   }
 
 }
