@@ -38,8 +38,8 @@
   <div class=" col text-left space">
     <h4 class="subtitulo2">Emprendimiento</h4>
   <div class="row align-self-center">
-    <div class="col col-4">
-      <img src="{{dataUser.data.logoEmprendimiento}}" class="mr-3" alt="logotipo">
+    <div class="col col-4 logo-ppm-user">
+      <img style="width:150px; height:100px" src="{{dataUser.data.logoEmprendimiento}}" class="mr-3" alt="logotipo">
     </div>
     <div class="col text-left">
       <h5 class="mt-0" style="font-weight: 700;">{{dataUser.data.emprendimientoTitulo}} </h5>
@@ -80,10 +80,10 @@
       </div>
       <div class="modal-body">
         <form [formGroup]="formDataUser">
-          <div class="form-group">
+         <!-- <div class="form-group">
             <label for="exampleInputEmail1">Foto Perfil</label>
             <input type="file" class="form-control" id="exampleInputEmail1"  aria-describedby="emailHelp">
-          </div>
+          </div>-->
           <div class="form-group">
             <label for="nombre">Nombre Completo</label>
             <input type="text" class="form-control" formControlName="nombreCompleto" id="nombre">
@@ -92,29 +92,29 @@
             <label for="celular">Celular</label>
             <input type="number" class="form-control" formControlName="celular" id="celular">
           </div>
-          <div class="form-group">
+         <!-- <div class="form-group">
             <label for="telefono">Teléfono fijo</label>
             <input type="number" class="form-control" formControlName="telefono" id="telefono">
-          </div>
-          <div class="form-group">
+          </div>-->
+          <!--<div class="form-group">
             <label for="email">Email</label>
             <input type="email" class="form-control" formControlName="email" id="email">
-          </div>
+          </div>-->
 
           <div class="form-group">
             <label for="sobremi">Sobre mí</label>
             <textarea class="form-control" id="sobremi" formControlName="sobreMi" rows="3"></textarea>
           </div>
           <div class="form-group">
-            <label for="logoempre">Logo de emprendimiento</label>
-            <input type="file" class="form-control" id="logoempre">
+            <label for="logoempre">Link del logo del emprendimiento</label>
+            <input type="text" class="form-control" id="logoempre">
           </div>
           <div class="form-group">
             <label for="emprendimiento">Emprendimiento</label>
             <input type="text" class="form-control" id="emprendimiento" formControlName="emprendimiento">
           </div>
-          <div class="form-group">
-            <label for="rubro">Rubro</label>
+         <div class="form-group">
+            <label for="rubro">Describe tu emprendimiento</label>
             <input type="text" class="form-control" id="rubro" formControlName="rubro">
           </div>
           <div class="form-group">

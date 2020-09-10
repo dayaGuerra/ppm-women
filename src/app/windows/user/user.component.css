@@ -80,3 +80,9 @@
   .margin{
     margin-top: 12px
   }
+
+  .logo-ppm-user{
+    border-radius: 5px;
+    width: 100px;
+    height: 100px
+  }

@@ -74,8 +74,10 @@ export class UserComponent implements OnInit {
       paginaWeb: [null],
       celular: [null],
       telefono: [null],
-      email: [null]
+      email: [null],
+      logoEmprendimiento:[null]
     });
+
   }
 
   get form() { return this.formDataUser.controls; }
