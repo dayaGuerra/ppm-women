@@ -40,10 +40,10 @@ export class LoginComponent implements OnInit {
         let idUs = user.user.uid;
         this.authSvc.saveUserData(user.user, idUs);
         this.subsDataUser();
-        this.router.navigate(['/windows/home']);
+        this.router.navigate(['/form']);
       } else {
         this.localService.setUserLogSE(indexU);
-        this.router.navigate(['/windows/home']);
+        this.router.navigate(['/form']);
       }
     } catch (error) {
       console.log('error', error);
